@@ -8,7 +8,8 @@ const products = [
     material: "Acero",
     description: "Acero Inoxidable",
     price: "53178400",
-    size:"Mediano (36mm – 40mm)"
+    size:"Mediano (36mm – 40mm)",
+    stock: "5"
   },
   {
     id: "2",
@@ -19,7 +20,8 @@ const products = [
     material: "Oro amarillo",
     description: "Oro Amarillo",
     price: "125549600",
-    size:"Pequeño (menos 36mm)"
+    size:"Pequeño (menos 36mm)",
+    stock: "2"
   },
   {
     id: "3",
@@ -30,7 +32,8 @@ const products = [
     material: "Acero Inoxidable",
     description: "Acero Inoxidable",
     price: "4179000",
-    size:"Mediano (36mm – 40mm)crono"
+    size:"Mediano (36mm – 40mm)crono",
+    stock: "15"
   },
   {
     id: "4",
@@ -41,7 +44,8 @@ const products = [
     material: "PVD, Oro Amarillo, Acero Inoxidable",
     description: "PVD, Oro Amarillo, Acero Inoxidable",
     price: "5359200",
-    size:"Pequeño (menos 36mm)"
+    size:"Pequeño (menos 36mm)",
+    stock: "1"
   },
   {
     id: "5",
@@ -52,7 +56,8 @@ const products = [
     material: "Acero Inoxidable",
     description: "Acero Inoxidable",
     price: "5034250",
-    size:"Mediano (36mm – 40mm)"
+    size:"Mediano (36mm – 40mm)",
+    stock: "0"
   },
   {
     id: "6",
@@ -63,7 +68,8 @@ const products = [
     material: "PVD, Acero Inoxidable",
     description: "PVD, Acero Inoxidable",
     price: "850000",
-    size:"Grande (más 40mm)"
+    size:"Grande (más 40mm)",
+    stock: "10"
   },
 ];
 
@@ -71,7 +77,7 @@ export const getProducts = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(products);
-    }, 2000);
+    }, 200);
   });
 };
 
@@ -79,7 +85,7 @@ export const getProductsById = (productId) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(products.find((product) => product.id === productId));
-    }, 2000);
+    }, 200);
   });
 };
 
@@ -87,6 +93,6 @@ export const getProductsByCategory = (categoryId) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(products.filter((product) => product.categoryId === categoryId));
-    }, 2000);
+    }, 200);
   });
 };

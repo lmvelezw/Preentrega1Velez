@@ -9,10 +9,10 @@ function Item(props) {
   });
 
   return (
-    <article className='flex flex-col p-4 rounded-xl shadow-lg shadow-gray-100'>
+    <article className='flex flex-col p-4 rounded-xl shadow-lg shadow-gray-100 bg-white'>
       <header className='flex flex-col flex-1'>
         <h2 className='flex flex-1 text-center text-m text-yellow-600 font-raleway'>{props.name}</h2>
-        <img className='max-h-fit' src={props.image} alt='' />
+        <img className='flex align-self-center max-w-full' src={props.image} alt='' />
         <small className='text-stone-400'>Descripción:</small>
         <p>{props.description}</p>
         <div className='my-3'>

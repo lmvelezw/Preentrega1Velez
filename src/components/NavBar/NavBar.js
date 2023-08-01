@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
-    <nav className="p-6 flex items-center justify-between">
+    <nav className="sticky bg-white shadow top-0 p-6 flex items-center justify-between">
       <Link to='/'>
       <h1 className="text-5xl">La relojería</h1>
       </Link>
