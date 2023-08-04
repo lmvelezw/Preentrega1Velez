@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-import { getProducts, getProductsByCategory } from "./asyncMock";
 import { useParams } from "react-router-dom";
-import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../services/config";
 
 function ItemListContainer(props) {
@@ -11,8 +10,6 @@ function ItemListContainer(props) {
   const {categories} = useParams();
   
   useEffect(() => {
-    // const db = getFirestore();
-
     const itemsCollection = categories ? query(collection(db,"watches"), where("categoryId","==",categories)) : collection(db, "watches");
 
     getDocs(itemsCollection)
