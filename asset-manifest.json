@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/RelojeriaECommerce/static/css/main.9e6be90a.css",
-    "main.js": "/RelojeriaECommerce/static/js/main.f22078e2.js",
+    "main.css": "/RelojeriaECommerce/static/css/main.934de02c.css",
+    "main.js": "/RelojeriaECommerce/static/js/main.02871711.js",
     "index.html": "/RelojeriaECommerce/index.html",
-    "main.9e6be90a.css.map": "/RelojeriaECommerce/static/css/main.9e6be90a.css.map",
-    "main.f22078e2.js.map": "/RelojeriaECommerce/static/js/main.f22078e2.js.map"
+    "main.934de02c.css.map": "/RelojeriaECommerce/static/css/main.934de02c.css.map",
+    "main.02871711.js.map": "/RelojeriaECommerce/static/js/main.02871711.js.map"
   },
   "entrypoints": [
-    "static/css/main.9e6be90a.css",
-    "static/js/main.f22078e2.js"
+    "static/css/main.934de02c.css",
+    "static/js/main.02871711.js"
   ]
 }
