@@ -19,9 +19,14 @@ function CartItem({ product, qty }) {
       </span>
       <span className="text-center">
         <small>Precio total:</small>
-        <p>${parseInt((product.price * qty).toFixed(2)).toLocaleString("es-CO")}</p>
+        <p>
+          ${parseInt((product.price * qty).toFixed(2)).toLocaleString("es-CO")}
+        </p>
       </span>
-      <button className="justify-self-center" onClick={() => deleteItem(product.id)}>
+      <button
+        className="justify-self-center"
+        onClick={() => deleteItem(product.id)}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

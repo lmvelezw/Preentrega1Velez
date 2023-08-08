@@ -4,15 +4,23 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { CarritoContext } from "../../context/CartContext";
 import { useContext } from "react";
+import { toast } from "react-toastify";
 
 function ItemDetail(props) {
   const [addQty, setAddQty] = useState(0);
 
-  const {addToCart} = useContext(CarritoContext)
+  const cartAdd = () => {
+    toast.success("Agregaste " + addQty + " al carrito", {
+      position: toast.POSITION.TOP_CENTER,
+      style: { background: '#38571B' }
+    });
+  };
+
+  const { addToCart } = useContext(CarritoContext);
 
   const qtyControl = (qty) => {
     setAddQty(qty);
-    addToCart({...props}, qty )
+    addToCart({ ...props }, qty);
   };
 
   const formattedPrice = parseInt(props.price).toLocaleString("es-CO", {
@@ -40,9 +48,23 @@ function ItemDetail(props) {
           <p className="font-bold text-3xl">{formattedPrice}</p>
         </div>
         <div>
-          {addQty > 0 ? (<div className="flex flex-col bg-gray-900/10 items-center justify-center gap-2">
-            <p className="pt-2"> Agregaste {addQty} al carrito</p> 
-            <Link to="/cart" className="bg-lime-800 px-4 py-2 my-2 text-white rounded-xl">Ir al carrito</Link></div>) : (props.stock < 1) ? <p className="bg-red-800 px-8 py-2 text-white text-center text-2xl">Sin stock</p> :(
+          {addQty > 0 ? (
+            (cartAdd(),
+            (
+              <div className="flex flex-col bg-gray-900/10 items-center justify-center gap-2">
+                <Link
+                  to="/cart"
+                  className="bg-lime-800 px-4 py-2 my-8 text-white rounded-xl"
+                >
+                  Ir al carrito
+                </Link>
+              </div>
+            ))
+          ) : props.stock < 1 ? (
+            <p className="bg-red-800 px-8 py-2 m-8 text-white text-center text-2xl rounded-xl">
+              Sin stock
+            </p>
+          ) : (
             <ItemCount initial={0} stock={props.stock} onAdd={qtyControl} />
           )}
         </div>

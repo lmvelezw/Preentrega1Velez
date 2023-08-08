@@ -8,7 +8,7 @@ function ItemList(props) {
       {
         props.products.length > 0 
         ? props.products.map(product => <Item key={product.id}{...product}/>)
-        : <p> Cargando...</p>
+        : <h3 className='text-center py-4 px-8'> Cargando...</h3>
         }
     </div>
   )
